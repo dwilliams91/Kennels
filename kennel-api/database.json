@@ -6,6 +6,13 @@
             "breed": "Poodle",
             "customerId": 1,
             "locationId": 2
+        },
+        {
+            "id": 2,
+            "name": "Daisy",
+            "breed": "Beagle",
+            "customerId": 2,
+            "locationId": 1
         }
     ],
     "customers": [

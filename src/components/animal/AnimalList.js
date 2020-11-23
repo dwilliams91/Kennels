@@ -2,7 +2,7 @@ import React,{useContext, useEffect} from "react"
 import { AnimalContext } from "./AnimalProvider"
 import {Animal} from "./Animal"
 import "./Animal.css"
-import {AnimalProvider} from "../animal/AnimalProvider"
+// import {AnimalProvider} from "../animal/AnimalProvider"
 
 export const AnimalList=()=>{
     const {Animals, getAnimals}=useContext(AnimalContext)
@@ -19,7 +19,7 @@ export const AnimalList=()=>{
     return(
         <div className="animals">
             {
-                Animals.map(singleAnimal=> <Animal key={singleAnimal.id} animal={singleAnimal}/>)
+                Animals.map(singleAnimals=><Animal key={singleAnimals.id} animal={singleAnimals}/>)
             }
 
         </div>
