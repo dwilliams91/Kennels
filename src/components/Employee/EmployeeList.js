@@ -2,6 +2,7 @@ import React, { useContext, useEffect} from "react"
 import {EmployeeContext} from "./EmployeeProvider"
 import {Employee} from "./Employee"
 import "./Employee.css"
+import { LocationProvider } from "../location/LocationProvider"
 
 export const EmployeeList=()=>{
     const {Employees,getEmployees}=useContext(EmployeeContext)
@@ -16,10 +17,13 @@ export const EmployeeList=()=>{
         console.log(Employees)
     },[Employees])
     return(
+        
         <div className="employees">
+             <LocationProvider>
             {
-                Employees.map(taco=><Employee key={taco.id} employee={taco}/>)
+                Employees.map(singleEmployee=><Employee key={singleEmployee.id} employee={singleEmployee}/>)
             }
+            </LocationProvider>
         </div>
 
     )
