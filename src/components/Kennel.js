@@ -6,6 +6,8 @@ import { EmployeeProvider } from "./employee/EmployeeProvider"
 import { EmployeeList } from "./employee/EmployeeList"
 import { AnimalProvider } from "./animal/AnimalProvider"
 import { AnimalList } from "./animal/AnimalList"
+import { CustomerProvider } from "./Customer/CustomerProvider"
+import { CustomerList } from "./Customer/CustomerList"
 
 export const Kennel = () => (
     <>
@@ -18,12 +20,18 @@ export const Kennel = () => (
         </LocationProvider>
         <h2>Employees</h2>
         <EmployeeProvider>
-            <EmployeeList/>
+            {/* <LocationProvider> */}
+                <EmployeeList />
+            {/* </LocationProvider> */}
         </EmployeeProvider>
         <h2>Animals</h2>
         <AnimalProvider>
-            <AnimalList/>
+            <AnimalList />
         </AnimalProvider>
+        <h2>Customers</h2>
+        <CustomerProvider>
+            <CustomerList/>
+        </CustomerProvider>
 
     </>
 )
