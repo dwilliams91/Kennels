@@ -15,7 +15,28 @@
             "address": "7002 Chestnut Ct"
         }
     ],
-    "employees": [],
+    "employees": [
+        {
+            "id": 1,
+            "name": "Jeremy Bakker",
+            "locationId": 2
+        },
+        {
+            "id": 2,
+            "name": "Baxter Williams",
+            "locationId": 1
+        },
+        {
+            "id": 3,
+            "name": " Cozy",
+            "locationId": 2
+        },
+        {
+            "id": 4,
+            "name": " Dwillz",
+            "locationId": 1
+        }
+    ],
     "locations": [
         {
             "id": 1,
