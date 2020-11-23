@@ -1,12 +1,11 @@
 import React from "react"
 import "./Employee.css"
 
-export const Employee=()=>(
+export const Employee = ({ employee }) => (
     <section className="employee">
-        <h3 className="employee__name"> Sally Dog</h3>
-        <div className="employee__location">Nashville Kennels North</div>
+        <h3 className="employee__name">{employee.name}</h3>
+        <address className="employee__location">{employee.locationId}</address>
     </section>
-
 )
 
 
