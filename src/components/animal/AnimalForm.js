@@ -34,8 +34,8 @@ export const AnimalForm = (props) => {
         .then(()=> props.history.push("/animals"))
     }
     }
-    console.log(Customers)
-    console.log(locations)
+    // console.log(Customers)
+    // console.log(locations)
     return (
         <form>
             <h2 className="animalForm__title">Make Appointment</h2>
@@ -43,6 +43,12 @@ export const AnimalForm = (props) => {
                 <div className="form-group">
                     <label htmlFor="animalName">Animal Name:</label>
                     <input type="text" id="animalName" ref={name} placeholder="Animal Name"></input>
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="animalBreed">Animal Name:</label>
+                    <input type="text" id="animalBreed" ref={breed} placeholder="Animal Name"></input>
                 </div>
             </fieldset>
             <fieldset>
@@ -59,6 +65,28 @@ export const AnimalForm = (props) => {
 
                 </div>
             </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="Customer"> Select Your Name</label>
+                    <select defaultValue="0" name="customer" ref={customer} id="customer">
+                        <option value="0">Select Your Name</option>
+                        {Customers.map(singleCustomer=> (
+                            <option key={singleCustomer.id} value={singleCustomer.id}>{singleCustomer.name}
+                            </option>
+
+                        ))}
+                    </select>
+
+                </div>
+            </fieldset>
+            <button type="submit"
+                onClick={evt => {
+                    evt.preventDefault() // Prevent browser from submitting the form
+                    constructNewAnimal()
+                }}
+                className="btn btn-primary">
+                Add Appointment
+            </button>
         </form>
 
     )
