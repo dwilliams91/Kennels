@@ -37,6 +37,18 @@
       "id": 3,
       "name": "Candance",
       "address": "212 Cat Rd"
+    },
+    {
+      "id": 4,
+      "name": "David Williams",
+      "address": "5005 Blah Street",
+      "email": "blah@blah.com"
+    },
+    {
+      "email": "david.lav.williams@gmail.com",
+      "password": "blah",
+      "name": "David Williams",
+      "id": 5
     }
   ],
   "employees": [
