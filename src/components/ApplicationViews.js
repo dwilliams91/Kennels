@@ -8,7 +8,8 @@ import { CustomerProvider } from "./Customer/CustomerProvider"
 import { CustomerList } from "./Customer/CustomerList"
 import { EmployeeList } from "./employee/EmployeeList"
 import { EmployeeProvider } from "./employee/EmployeeProvider"
-import {EmployeeForm} from "./employee/EmployeeForm"
+import { EmployeeForm } from "./employee/EmployeeForm"
+import { AnimalForm } from "./animal/AnimalForm"
 
 export const ApplicationViews = (props) => {
     return (
@@ -24,9 +25,13 @@ export const ApplicationViews = (props) => {
             <LocationProvider>
                 <CustomerProvider>
                     <AnimalProvider>
-                        <Route exact path="/animals">
-                            <AnimalList />
-                        </Route>
+                        <Route exact path="/animals" render={
+                            props => <AnimalList {...props} />
+                        } />
+                        <Route exact path="/animals/create" render={
+                            props => <AnimalForm {...props} />
+                        } />
+
                     </AnimalProvider>
                 </CustomerProvider>
             </LocationProvider>
@@ -37,16 +42,16 @@ export const ApplicationViews = (props) => {
                 </Route>
             </CustomerProvider>
             <AnimalProvider>
-            <LocationProvider>
-                <EmployeeProvider>
-                    <Route exact path="/employees" render={
-                        props => <EmployeeList {...props} />
-                    } />
-                    <Route exact path="/employees/create" render={
-        props => <EmployeeForm {...props} />
-    } />
-                </EmployeeProvider>
-            </LocationProvider>
+                <LocationProvider>
+                    <EmployeeProvider>
+                        <Route exact path="/employees" render={
+                            props => <EmployeeList {...props} />
+                        } />
+                        <Route exact path="/employees/create" render={
+                            props => <EmployeeForm {...props} />
+                        } />
+                    </EmployeeProvider>
+                </LocationProvider>
             </AnimalProvider>
         </>
     )

@@ -6,7 +6,7 @@ import { Animal } from "./Animal"
 import "./Animal.css"
 
 
-export const AnimalList=()=>{
+export const AnimalList=(props)=>{
     console.log("animalList is being called")
     const {Animals, getAnimals}=useContext(AnimalContext)
     const {locations, getLocations}=useContext(LocationContext)
@@ -21,6 +21,13 @@ export const AnimalList=()=>{
 
    
     return (
+     <>   
+     <div>
+         <h2>Animals</h2>
+         <button onClick={()=>props.history.push("/animals/create")}>
+             Add Animal
+         </button>
+     </div>
     <div className="animals">
     {Animals.map(singleAnimal=>{
         console.log(Customers)
@@ -36,5 +43,6 @@ export const AnimalList=()=>{
     })}
     
     </div>
+    </>
     )
 }

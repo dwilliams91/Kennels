@@ -13,6 +13,13 @@
       "breed": "Beagle",
       "customerId": 2,
       "locationId": 1
+    },
+    {
+      "name": "Baxter",
+      "breed": "Cat",
+      "locationId": 1,
+      "customerId": 2,
+      "id": 3
     }
   ],
   "customers": [
