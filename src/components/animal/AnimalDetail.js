@@ -8,6 +8,8 @@ export const AnimalDetails = (props) => {
     const [animal, setAnimal] = useState({ location: {}, customer: {}})
 
     useEffect(() => {
+        const CheckingOutProps=parseInt(props.match.params.animalId)
+        console.log(CheckingOutProps)
         const animalId = parseInt(props.match.params.animalId)
         getAnimalById(animalId)
             .then(setAnimal)
