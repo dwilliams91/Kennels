@@ -62,21 +62,25 @@
     {
       "id": 1,
       "name": "Jeremy Bakker",
+      "animalId": 2,
       "locationId": 2
     },
     {
       "id": 2,
       "name": "Baxter Williams",
+      "animalId": 1,
       "locationId": 1
     },
     {
       "id": 3,
       "name": " Cozy",
+      "animalId": 2,
       "locationId": 2
     },
     {
       "id": 4,
       "name": " Dwillz",
+      "animalId": 3,
       "locationId": 1
     },
     {
