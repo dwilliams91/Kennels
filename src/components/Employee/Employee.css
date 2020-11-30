@@ -10,3 +10,8 @@
       padding: 1em;
       border: 1px solid goldenrod;
   }
+  .employeeList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
