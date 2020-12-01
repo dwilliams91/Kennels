@@ -24,7 +24,7 @@ export const EmployeeDetail = (props) => {
         const animal = Animals.find(a => a.id === employee.animalId) || {}
         setAnimal(animal)
     }, [Animals])
-
+    // we find the employee who's id matches the URL. 
     useEffect(() => {
         const employee = Employees.find(e => e.id === parseInt(props.match.params.employeeId)) || {}
         setEmployee(employee)
