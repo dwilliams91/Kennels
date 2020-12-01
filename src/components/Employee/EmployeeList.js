@@ -31,6 +31,7 @@ export const EmployeeList = (props) => {
             </button>
         <div className="employees">
             <article className="employeeList">
+                {/* create a link with the id of the employee */}
                 {
                     Employees.map(employee => {
                         return <Link key={employee.id} className="employee" to={`/employees/${employee.id}`}>

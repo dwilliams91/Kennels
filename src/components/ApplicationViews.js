@@ -13,6 +13,7 @@ import { AnimalForm } from "./animal/AnimalForm"
 import { EmployeeDetail } from "./employee/EmployeeDetail"
 import { LocationDetail } from "./location/LocationDetails"
 import { AnimalDetails } from "./animal/AnimalDetail"
+import {AnimalSearch} from "./animal/AnimalSearch"
 export const ApplicationViews = (props) => {
     return (
         <>
@@ -34,18 +35,22 @@ export const ApplicationViews = (props) => {
             <LocationProvider>
                 <CustomerProvider>
                     <AnimalProvider>
-                        <Route exact path="/animals" render={
-                            props => <AnimalList {...props} />
-                        } />
+                        
                         <Route exact path="/animals/create" render={
                             props => <AnimalForm {...props} />
                         } />
-                        <AnimalProvider>
                             <Route path="/animals/:animalId(\d+)" render={
                                 props => <AnimalDetails {...props} />
                             } />
-                        </AnimalProvider>
+                        <Route exact path="/animals" render= {
+                            props=><>
+                            <AnimalSearch></AnimalSearch>
+                            <AnimalList></AnimalList>
+                            
+                            </>
+                        }>
 
+                        </Route>
                     </AnimalProvider>
                 </CustomerProvider>
             </LocationProvider>
@@ -64,6 +69,7 @@ export const ApplicationViews = (props) => {
                         <Route exact path="/employees/create" render={
                             props => <EmployeeForm {...props} />
                         } />
+                        {/* creates a variable named employeeID within match of prop */}
                         <Route path="/employees/:employeeId(\d+)" render={
                             props => <EmployeeDetail {...props} />
                         } />
