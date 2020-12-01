@@ -8,13 +8,6 @@
       "locationId": 2
     },
     {
-      "id": 2,
-      "name": "Daisy",
-      "breed": "Beagle",
-      "customerId": 2,
-      "locationId": 1
-    },
-    {
       "name": "Baxter",
       "breed": "Cat",
       "locationId": 1,
@@ -33,19 +26,19 @@
     {
       "id": 1,
       "name": "Hannah Hall",
-      "email":"blah123@blah.com",
+      "email": "blah123@blah.com",
       "password": "blah"
-      },
+    },
     {
       "id": 2,
       "name": "Jimmy",
-      "email":"blah123@blah.com",
+      "email": "blah123@blah.com",
       "password": "blah"
     },
     {
       "id": 3,
       "name": "Candance",
-      "email":"blah123@blah.com",
+      "email": "blah123@blah.com",
       "password": "blah"
     },
     {
@@ -63,22 +56,10 @@
   ],
   "employees": [
     {
-      "id": 1,
-      "name": "Jeremy Bakker",
-      "animalId": 2,
-      "locationId": 2
-    },
-    {
       "id": 2,
       "name": "Baxter Williams",
       "animalId": 1,
       "locationId": 1
-    },
-    {
-      "id": 3,
-      "name": " Cozy",
-      "animalId": 2,
-      "locationId": 2
     },
     {
       "id": 4,
