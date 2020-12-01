@@ -33,22 +33,25 @@
     {
       "id": 1,
       "name": "Hannah Hall",
-      "address": "7002 Chestnut Ct"
-    },
+      "email":"blah123@blah.com",
+      "password": "blah"
+      },
     {
       "id": 2,
       "name": "Jimmy",
-      "address": "1111 Blah Ave"
+      "email":"blah123@blah.com",
+      "password": "blah"
     },
     {
       "id": 3,
       "name": "Candance",
-      "address": "212 Cat Rd"
+      "email":"blah123@blah.com",
+      "password": "blah"
     },
     {
       "id": 4,
       "name": "David Williams",
-      "address": "5005 Blah Street",
+      "password": "blah",
       "email": "blah@blah.com"
     },
     {
