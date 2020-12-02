@@ -16,14 +16,14 @@ export const AnimalList = ({ history }) => {
     useEffect(()=>{
         if (searchTerms !==""){
             console.log(Animals)
-            const subset=Animals.filter(singleAnimal=>singleAnimal.name.toLowerCase().includes(searchTerms))
+            const subset=Animals.filter(singleAnimal=>singleAnimal.name.toLowerCase().includes(searchTerms.toLowerCase()))
             setFiltered(subset)
         } else{
             setFiltered(Animals)
         }
 
     },[searchTerms, Animals])
-
+    console.log(history)
     return (
         <>
             <h1>Animals</h1>
