@@ -13,13 +13,14 @@ export const AnimalForm = (props) => {
 
     // Is there a a URL parameter??
     const editMode = props.match.params.hasOwnProperty("animalId")
-
+    // console.log("edit mode",editMode)
     const handleControlledInputChange = (event) => {
         /*
             When changing a state object or array, always create a new one
             and change state instead of modifying current one
         */
         const newAnimal = Object.assign({}, Animal)
+        // console.log("newAnimal",newAnimal)
         newAnimal[event.target.name] = event.target.value
         setAnimal(newAnimal)
     }
