@@ -19,8 +19,8 @@ export const EmployeeList = (props) => {
     }, [])
 
     useEffect(() => {
-        console.log("EmployeeList had a state change")
-        console.log(Employees)
+        // console.log("EmployeeList had a state change")
+        // console.log(Employees)
     }, [Employees])
 
     return (

@@ -72,6 +72,9 @@ export const ApplicationViews = (props) => {
                         <Route exact path="/employees/create" render={
                             props => <EmployeeForm {...props} />
                         } />
+                        <Route path="/employees/edit/:employeeId(\d+)" render={
+                            props => <EmployeeForm {...props} />
+                        } />
                         {/* creates a variable named employeeID within match of prop */}
                         <Route path="/employees/:employeeId(\d+)" render={
                             props => <EmployeeDetail {...props} />

@@ -17,12 +17,10 @@
       "treatment": ""
     },
     {
-      "name": "Cozy",
-      "breed": "cat",
-      "locationId": 1,
-      "customerId": 5,
       "id": 4,
-      "treatment": ""
+      "name": " Dwillz123",
+      "locationId": 1,
+      "animalId": 3
     },
     {
       "id": 5,
@@ -74,9 +72,9 @@
     },
     {
       "id": 4,
-      "name": " Dwillz",
-      "animalId": 3,
-      "locationId": 1
+      "name": " Dwillz123",
+      "locationId": 1,
+      "animalId": 1
     },
     {
       "name": "Britt",
