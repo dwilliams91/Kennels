@@ -46,6 +46,9 @@ export const EmployeeDetail = (props) => {
                     : `Currently taking care of ${animal.name}`
                 }
             </div>
+            <button onClick={() => {
+                props.history.push(`/employees/edit/${employee.id}`)
+            }}>Edit</button>
         </section>
     )
 }

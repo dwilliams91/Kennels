@@ -1,15 +1,16 @@
-import React, { useContext, useRef, useEffect } from "react"
+import React, { useContext, useRef, useEffect, useState } from "react"
 import { EmployeeContext } from "./EmployeeProvider"
 import { LocationContext } from "../location/LocationProvider"
 import { AnimalContext } from "../animal/AnimalProvider"
 import "./Employee.css"
 
 export const EmployeeForm = (props) => {
-    const { addEmployee } = useContext(EmployeeContext)
+    const { addEmployee, Employees, getEmployees, updateEmployee } = useContext(EmployeeContext)
     const { locations, getLocations } = useContext(LocationContext)
     const {Animals, getAnimals}=useContext(AnimalContext)
-
-    /*
+     
+    const [Employee, setEmployee]=useState({})
+    /*{}
         Create references that can be attached to the input
         fields in the form. This will allow you to get the
         value of the input fields later when the user clicks
@@ -21,12 +22,38 @@ export const EmployeeForm = (props) => {
     const location = useRef(null)
     const animal = useRef(null)
 
+    const editMode=props.match.params.hasOwnProperty("employeeId")
+    console.log("edit mode", editMode)
     /*
         Get animal state and location state on initialization.
     */
+   const handleControlledInputChange = (event) => {
+    /*
+        When changing a state object or array, always create a new one
+        and change state instead of modifying current one
+    */
+    const newEmployee = Object.assign({}, Employee)
+    // console.log("newAnimal",newAnimal)
+    newEmployee[event.target.name] = event.target.value
+    setEmployee(newEmployee)
+}
+
+   const getEmployeeInEditMode=()=>{
+       if (editMode){
+           const employeeId=parseInt(props.match.params.employeeId)
+
+           const selectedEmployee=Employees.find(a=>a.id===employeeId) || {}
+           setEmployee(selectedEmployee)
+       }
+   }
     useEffect(() => {
        getAnimals().then(getLocations)
+       getEmployees()
     }, [])
+
+    useEffect(()=>{
+        getEmployeeInEditMode()
+    },[Employees])
 
     const constructNewEmployee = () => {
         /*
@@ -41,6 +68,14 @@ export const EmployeeForm = (props) => {
         if (locationId === 0) {
             window.alert("Please select a location")
         } else {
+            if(editMode) {
+                updateEmployee({
+                id: Employee.id,
+                name: Employee.name,
+                locationId,
+                animalId}
+                )
+            } else
             addEmployee({
                 name: name.current.value,
                 locationId,
@@ -56,7 +91,13 @@ export const EmployeeForm = (props) => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="employeeName">Employee name: </label>
-                    <input type="text" id="employeeName" ref={name} required autoFocus className="form-control" placeholder="Employee name" />
+                    <input type="text" name="name" required autoFocus className="form-control"
+                        proptype="varchar"
+                        placeholder="Employee name"
+                        defaultValue={Employee.name}
+                        ref={name}
+                        onChange={handleControlledInputChange}
+                    />
                 </div>
             </fieldset>
             <fieldset>
