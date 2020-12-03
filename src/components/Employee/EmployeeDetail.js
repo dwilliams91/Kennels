@@ -3,12 +3,13 @@ import { AnimalContext } from "../animal/AnimalProvider"
 import { LocationContext } from "../location/LocationProvider"
 import { EmployeeContext } from "./EmployeeProvider"
 import "./Employee.css"
+import { EmployeeList } from "./EmployeeList"
 
 
 export const EmployeeDetail = (props) => {
     const { Animals, getAnimals } = useContext(AnimalContext)
     const { locations, getLocations } = useContext(LocationContext)
-    const { Employees, getEmployees } = useContext(EmployeeContext)
+    const { Employees, getEmployees, fireEmployee } = useContext(EmployeeContext)
 
     const [animal, setAnimal] = useState({})
     const [employee, setEmployee] = useState({})
@@ -49,6 +50,13 @@ export const EmployeeDetail = (props) => {
             <button onClick={() => {
                 props.history.push(`/employees/edit/${employee.id}`)
             }}>Edit</button>
+            <button onClick={()=>{
+                console.log("you clicked", employee.name)
+                fireEmployee(employee).then(()=>{
+                    props.history.push("/employees")
+                }
+                )
+            }}>Let Employee Go</button>
         </section>
     )
 }

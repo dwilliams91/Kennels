@@ -77,10 +77,10 @@
       "id": 5
     },
     {
-      "id": 6,
       "name": "Jim",
-      "locationId": 1,
-      "animalId": 6
+      "locationId": 2,
+      "animalId": 5,
+      "id": 6
     }
   ],
   "locations": [
