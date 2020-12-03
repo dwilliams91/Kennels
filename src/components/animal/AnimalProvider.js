@@ -26,6 +26,7 @@ export const AnimalProvider = (props) => {
     }
 
     const releaseAnimal = animalId => {
+        console.log(animalId)
         return fetch(`http://localhost:8088/animals/${animalId}`, {
             method: "DELETE"
         })

@@ -9,26 +9,20 @@
       "treatment": ""
     },
     {
-      "name": "Baxter",
-      "breed": "Cat",
-      "locationId": 1,
-      "customerId": 2,
-      "id": 3,
-      "treatment": ""
-    },
-    {
-      "id": 4,
-      "name": " Dwillz123",
-      "locationId": 1,
-      "animalId": 3
-    },
-    {
       "id": 5,
       "name": "Ollies",
       "breed": "Corgie",
       "locationId": 2,
       "treatment": "Nail Clipping",
       "customerId": 5
+    },
+    {
+      "name": "Baxter",
+      "breed": "Cat",
+      "locationId": 1,
+      "treatment": "Grooming",
+      "customerId": 5,
+      "id": 6
     }
   ],
   "customers": [
@@ -81,6 +75,12 @@
       "locationId": 1,
       "animalId": 1,
       "id": 5
+    },
+    {
+      "id": 6,
+      "name": "Jim",
+      "locationId": 1,
+      "animalId": 6
     }
   ],
   "locations": [
